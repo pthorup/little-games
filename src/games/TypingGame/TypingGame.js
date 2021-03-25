@@ -72,7 +72,9 @@ const TypingGame = () => {
 
     return (
         <div className="TypingGame">
-            <h1>Typing Game here</h1>
+            <h1 className="TypingGame-title">
+                Typing Little<br></br> Game
+            </h1>
             <div className="TypingGame-settingContainer">
                 <Settings
                     isAllCaps={isAllCaps}
@@ -80,7 +82,7 @@ const TypingGame = () => {
                 />
             </div>
 
-            <div className="TypingGame-InstructionContainer">
+            <div className="TypingGame-instructionContainer">
                 {isAllCaps ? (
                     <GameInstruction text={gameTitle.toUpperCase()} />
                 ) : (

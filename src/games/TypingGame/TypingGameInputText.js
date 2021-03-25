@@ -6,11 +6,13 @@ const TypingGameInputText = (props) => {
         <div className="TypingGameInputText">
             <input
                 className={`TypingGameInputText-inputText ${
-                    props.isWrong ? 'textColor--green' : 'textColor--red'
+                    props.isWrong ? 'textColor--purple' : 'textColor--red'
                 }`}
                 onChange={props.onTextChange}
                 value={props.value}
+                size="35"
                 disabled={props.onGameOver}
+                placeholder="Type the letters that are in the title"
             />
         </div>
     )

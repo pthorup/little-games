@@ -1,25 +1,35 @@
-.TypingGame-settingContainer {
-    border: 1px solid purple;
+.TypingGame {
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
-.TypingGame-InstructionContainer {
-    border: 1px solid pink;
+.TypingGame-title {
+    font-family: 'Encode Sans', sans-serif;
+    color: #ebae34;
+}
+
+.TypingGame-settingContainer {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.TypingGame-instructionContainer {
+    text-align: center;
 }
 
 .TypingGame-imgContainer {
-    border: 1px solid green;
     text-align: center;
 }
 
 .TypingGame-textContainer {
-    border: 1px solid blue;
 }
 
 .TypingGame-gameEndContainer {
-    border: 1px solid orange;
 }
 
-.TypingGame-InstructionContainer,
+.TypingGame-instructionContainer,
 .TypingGame-imgContainer,
 .TypingGame-inputTextContainer,
 .TypingGame-gameEndContainer {

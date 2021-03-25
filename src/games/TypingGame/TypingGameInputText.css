@@ -5,8 +5,7 @@
 .TypingGameInputText-inputText {
     font-size: 40px;
     border: none;
-    border-bottom: 3px solid green;
-    color: red;
+    border-bottom: 3px solid #037a8f;
 }
 
 .TypingGameInputText-inputText:focus {

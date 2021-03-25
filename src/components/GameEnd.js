@@ -4,8 +4,10 @@ import './GameEnd.css'
 const GameEnd = (props) => {
     return (
         <div className="GameEnd">
-            <span>{props.award}</span>
-            <button onClick={props.onGameReset}>New Game</button>
+            <span className="GameEnd-award">{props.award}</span>
+            <button className="GameEnd-btnReset" onClick={props.onGameReset}>
+                New Game
+            </button>
         </div>
     )
 }

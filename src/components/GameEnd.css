@@ -1,3 +1,20 @@
 .GameEnd {
-    text-align: center;
+    background-color: #e1daf2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
+.GameEnd-award {
+    font-size: 56px;
+    padding-right: 24px;
+}
+
+.GameEnd-btnReset {
+    background-color: #9978eb;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    padding: 16px 32px;
 }
