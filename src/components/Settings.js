@@ -5,12 +5,12 @@ const Settings = (props) => {
     return (
         <div className="Settings">
             <input
-                name="isAllCaps"
+                name="isUppercase"
                 type="checkbox"
-                checked={props.isAllCaps}
+                checked={props.isUppercase}
                 onChange={props.onCapsChange}
             />{' '}
-            All Caps
+            Uppercase
         </div>
     )
 }

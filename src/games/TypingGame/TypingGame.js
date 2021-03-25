@@ -10,14 +10,14 @@ import './TypingGame.css'
 const TypingGame = () => {
     const [gameImage, setGameImage] = useState('')
     const [gameTitle, setGameTitle] = useState('')
-    const [isAllCaps, setIsAllCaps] = useState(false)
+    const [isUppercase, setIsUppercase] = useState(false)
     const [isGameOver, setIsGameOver] = useState(false)
     const [userInputText, setUserInputText] = useState('')
     const [isInputTextCorrect, setIsInputTextCorrect] = useState()
     const award = useRef('🏆')
 
-    const handleAllCapsChange = () => {
-        setIsAllCaps(!isAllCaps)
+    const handleUppercaseChange = () => {
+        setIsUppercase(!isUppercase)
         setUserInputText('')
     }
 
@@ -26,7 +26,7 @@ const TypingGame = () => {
         let trackIfCorrect = true
 
         for (let i = 0; i < userInputValue.length; i++) {
-            if (isAllCaps) {
+            if (isUppercase) {
                 if (userInputValue[i] !== gameTitle[i].toUpperCase()) {
                     trackIfCorrect = false
                 }
@@ -42,7 +42,7 @@ const TypingGame = () => {
             if (userInputValue === gameTitle) {
                 setIsGameOver(true)
             } else if (
-                isAllCaps &&
+                isUppercase &&
                 userInputValue === gameTitle.toUpperCase()
             ) {
                 setIsGameOver(true)
@@ -73,17 +73,18 @@ const TypingGame = () => {
     return (
         <div className="TypingGame">
             <h1 className="TypingGame-title">
-                Typing Little<br></br> Game
+                Little Typing <br />
+                Game
             </h1>
             <div className="TypingGame-settingContainer">
                 <Settings
-                    isAllCaps={isAllCaps}
-                    onCapsChange={handleAllCapsChange}
+                    isUppercase={isUppercase}
+                    onCapsChange={handleUppercaseChange}
                 />
             </div>
 
             <div className="TypingGame-instructionContainer">
-                {isAllCaps ? (
+                {isUppercase ? (
                     <GameInstruction text={gameTitle.toUpperCase()} />
                 ) : (
                     <GameInstruction text={gameTitle} />
