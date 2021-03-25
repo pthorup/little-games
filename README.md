@@ -16,5 +16,5 @@ Since the keyboard letters are all in uppercase. There is a "uppercase checkbox"
 
 ## Tech
 
-This app was made as part of my assignment in a React course.
-It is my solution to demonstrate my basic knowledge of React and the React Hook system and was made with the help of [Create React App](https://github.com/facebook/create-react-app).
+This app was made as part of my assignment in my React course.
+It is my solution to demonstrate my basic knowledge of React and the React Hook system. It is made with the help of [Create React App](https://github.com/facebook/create-react-app). The structure of the app is based on the possibility of additional games in the future. Thus certain components can be re-used.
