@@ -9,8 +9,8 @@ const Settings = (props) => {
                 type="checkbox"
                 checked={props.isUppercase}
                 onChange={props.onCapsChange}
-            />{' '}
-            Uppercase
+            />
+            Upper case
         </div>
     )
 }

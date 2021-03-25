@@ -10,14 +10,15 @@ import './TypingGame.css'
 const TypingGame = () => {
     const [gameImage, setGameImage] = useState('')
     const [gameTitle, setGameTitle] = useState('')
-    const [isUppercase, setIsUppercase] = useState(false)
+    const [isUpperCase, setIsUpperCase] = useState(false)
     const [isGameOver, setIsGameOver] = useState(false)
     const [userInputText, setUserInputText] = useState('')
     const [isInputTextCorrect, setIsInputTextCorrect] = useState()
     const award = useRef('🏆')
 
-    const handleUppercaseChange = () => {
-        setIsUppercase(!isUppercase)
+    const handleUpperCaseChange = () => {
+        setIsUpperCase(!isUpperCase)
+        // reset user's input as they answer will be wrong upon caps change
         setUserInputText('')
     }
 
@@ -25,8 +26,10 @@ const TypingGame = () => {
         const userInputValue = e.target.value
         let trackIfCorrect = true
 
+        // Go through all the characters in user input and compare to the title text.
+        // Additional checks if upper case setting is enabled
         for (let i = 0; i < userInputValue.length; i++) {
-            if (isUppercase) {
+            if (isUpperCase) {
                 if (userInputValue[i] !== gameTitle[i].toUpperCase()) {
                     trackIfCorrect = false
                 }
@@ -37,26 +40,33 @@ const TypingGame = () => {
             }
         }
 
+        // if all is correct, user’s input text is purple. But if user makes one mistake. Text turns red.
+        // isInputTextCorrect is use to add css class to the input box text
         if (trackIfCorrect) {
             setIsInputTextCorrect(true)
             if (userInputValue === gameTitle) {
+                // New game button appears on screen.
                 setIsGameOver(true)
             } else if (
-                isUppercase &&
+                isUpperCase &&
                 userInputValue === gameTitle.toUpperCase()
             ) {
                 setIsGameOver(true)
             }
         } else {
+            // resposible for setting text red
             setIsInputTextCorrect(false)
-            setIsGameOver(false)
         }
+        // saving user input on state to convert component into a controlled component
         setUserInputText(userInputValue)
     }
 
     const handleGameResetClick = () => {
+        // reset input value
         setUserInputText('')
+        // reset to false as new game has started
         setIsGameOver(false)
+        // reset title hence triggering useEffect hook so new title/image is choosen
         setGameTitle('')
     }
 
@@ -66,6 +76,7 @@ const TypingGame = () => {
             Math.random() * Math.floor(GameData.length),
         )
         const { image, description } = GameData[randomNum]
+        // Set on state to trigger re-render
         setGameImage(image)
         setGameTitle(description)
     }, [gameTitle])
@@ -78,13 +89,13 @@ const TypingGame = () => {
             </h1>
             <div className="TypingGame-settingContainer">
                 <Settings
-                    isUppercase={isUppercase}
-                    onCapsChange={handleUppercaseChange}
+                    isUpperCase={isUpperCase}
+                    onCapsChange={handleUpperCaseChange}
                 />
             </div>
 
             <div className="TypingGame-instructionContainer">
-                {isUppercase ? (
+                {isUpperCase ? (
                     <GameInstruction text={gameTitle.toUpperCase()} />
                 ) : (
                     <GameInstruction text={gameTitle} />
