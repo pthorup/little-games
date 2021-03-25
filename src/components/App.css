@@ -1,0 +1,14 @@
+.app-container {
+    border: 1px solid red;
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 48px;
+}
+
+.textColor--red {
+    color: red;
+}
+
+.textColor--green {
+    color: green;
+}

@@ -1,0 +1,14 @@
+.TypingGameInputText {
+    text-align: center;
+}
+
+.TypingGameInputText-inputText {
+    font-size: 40px;
+    border: none;
+    border-bottom: 3px solid green;
+    color: red;
+}
+
+.TypingGameInputText-inputText:focus {
+    outline: none;
+}

@@ -1,0 +1,27 @@
+.TypingGame-settingContainer {
+    border: 1px solid purple;
+}
+
+.TypingGame-InstructionContainer {
+    border: 1px solid pink;
+}
+
+.TypingGame-imgContainer {
+    border: 1px solid green;
+    text-align: center;
+}
+
+.TypingGame-textContainer {
+    border: 1px solid blue;
+}
+
+.TypingGame-gameEndContainer {
+    border: 1px solid orange;
+}
+
+.TypingGame-InstructionContainer,
+.TypingGame-imgContainer,
+.TypingGame-inputTextContainer,
+.TypingGame-gameEndContainer {
+    margin-bottom: 32px;
+}
