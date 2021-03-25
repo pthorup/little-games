@@ -30,7 +30,11 @@ const TypingGame = () => {
         // Additional checks if upper case setting is enabled
         for (let i = 0; i < userInputValue.length; i++) {
             if (isUpperCase) {
-                if (userInputValue[i] !== gameTitle[i].toUpperCase()) {
+                // check if gameTitle[i] is still valid as user can type sentence longer then title length by mistake.
+                if (
+                    gameTitle[i] !== undefined &&
+                    userInputValue[i] !== gameTitle[i].toUpperCase()
+                ) {
                     trackIfCorrect = false
                 }
             } else {
@@ -54,7 +58,7 @@ const TypingGame = () => {
                 setIsGameOver(true)
             }
         } else {
-            // resposible for setting text red
+            // responsible for setting text red
             setIsInputTextCorrect(false)
         }
         // saving user input on state to convert component into a controlled component
