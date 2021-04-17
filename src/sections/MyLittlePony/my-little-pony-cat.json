@@ -1,0 +1,114 @@
+{
+    "status": 200,
+    "data": [
+        {
+            "id": 1,
+            "name": "Twilight Sparkle",
+            "alias": "Princess Twilight Sparkle",
+            "url": "https://mlp.fandom.com/wiki/Twilight_Sparkle",
+            "sex": "Female",
+            "residence": "Canterlot (S1E1, S9E26)\nCastle of Friendship, Ponyville (seasons 5-9)\nGolden Oak Library, Ponyville (seasons 1-4)\nCrystal Princess Palace (toy line)",
+            "occupation": "Ruler of Equestria (S9E26)\nFounder/leader of the Council of Friendship (S9E26)\nRuler of the Castle of Friendship (S4E26-S9E26)\nFounder/principal of the School of Friendship (S8E1-S9E20)\nStarlight Glimmer's teacher (S5E26-S7E1)\nGolden Oak Library librarian (seasons 1-4)\nPrincess Celestia's student (seasons 1-3)\nStudent at Celestia's School for Gifted Unicorns (formerly)",
+            "kind": ["Alicorn", "Unicorn", "Human"],
+            "image": [
+                "https://vignette.wikia.nocookie.net/mlp/images/b/bc/Princess_Twilight_Sparkle_ID_S4E26.png/revision/latest?cb=20160207045127",
+                "https://vignette.wikia.nocookie.net/mlp/images/6/6c/Twilight_S2E25_cropped.png/revision/latest?cb=20160315121005",
+                "https://vignette.wikia.nocookie.net/mlp/images/9/97/Twilight_filly_crop_S2E25.png/revision/latest?cb=20140108015837",
+                "https://vignette.wikia.nocookie.net/mlp/images/1/18/Twilight_Sparkle_infant_ID_MLPS2.png/revision/latest?cb=20190823095629",
+                "https://vignette.wikia.nocookie.net/mlp/images/e/ef/Future_Twilight_Sparkle_ID_S9E26.png/revision/latest?cb=20191013013633",
+                "https://vignette.wikia.nocookie.net/mlp/images/0/0c/Twilight_Sparkle_human_at_lockers_EG.png/revision/latest?cb=20141211040145"
+            ]
+        },
+        {
+            "id": 13,
+            "name": "Princess Celestia",
+            "alias": "Queen Celestia",
+            "url": "https://mlp.fandom.com/wiki/Princess_Celestia",
+            "sex": "Female",
+            "residence": "Silver Shoals (S9E26 onward)\nCanterlot (formerly)\nCastle of the Two Sisters (formerly)",
+            "occupation": "Co-ruler of Equestria (formerly)\nTwilight Sparkle's teacher (season 1 to 3)\nSunset Shimmer's teacher (formerly)",
+            "kind": ["Alicorn"],
+            "image": [
+                "https://vignette.wikia.nocookie.net/mlp/images/2/2a/Princess_Celestia_ID_S4E01.png/revision/latest?cb=20140322224921",
+                "https://vignette.wikia.nocookie.net/mlp/images/2/2d/Legends_of_Magic_issue_1_Young_Celestia.png/revision/latest?cb=20170502170956"
+            ]
+        },
+        {
+            "id": 14,
+            "name": "Princess Luna",
+            "alias": "Nightmare Moon",
+            "url": "https://mlp.fandom.com/wiki/Princess_Luna",
+            "sex": "Female",
+            "residence": "Silver Shoals (S9E26 onward)\nCanterlot (formerly)\nMoon (banished until S1E1)\nCastle of the Two Sisters (formerly)",
+            "occupation": "Co-ruler of Equestria (formerly)",
+            "kind": ["Alicorn"],
+            "image": [
+                "https://vignette.wikia.nocookie.net/mlp/images/1/18/Princess_Luna_ID_S5E04.png/revision/latest?cb=20150422172452",
+                "https://vignette.wikia.nocookie.net/mlp/images/0/0f/Princess_Luna_ID_S1E02.png/revision/latest?cb=20130810084859",
+                "https://vignette.wikia.nocookie.net/mlp/images/9/9b/Nightmare_Moon_ID.png/revision/latest?cb=20140702174212"
+            ]
+        },
+        {
+            "id": 17,
+            "name": "Princess Cadance",
+            "alias": "Princess Mi Amore Cadenza",
+            "url": "https://mlp.fandom.com/wiki/Princess_Cadance",
+            "sex": "Female",
+            "residence": "Crystal Empire\nCanterlot (formerly)",
+            "occupation": "Co-ruler of the Crystal Empire\nFoal-sitter of Twilight Sparkle (formerly)\nStudent at Canterlot Academy (formerly)",
+            "kind": ["Alicorn", "Human", "Pegasus"],
+            "image": [
+                "https://vignette.wikia.nocookie.net/mlp/images/6/6f/Princess_Cadance_ID_S4E11.png/revision/latest?cb=20140128163901",
+                "https://vignette.wikia.nocookie.net/mlp/images/3/38/Younger_Princess_Cadance_ID_S2E25.png/revision/latest?cb=20130826005555",
+                "https://vignette.wikia.nocookie.net/mlp/images/8/8c/Blind_Bag_Princess_Cadance_prototype.jpg/revision/latest?cb=20160423023530",
+                "https://vignette.wikia.nocookie.net/mlp/images/5/5a/Dean_Cadance_ID_EG3.png/revision/latest?cb=20151018015310"
+            ]
+        },
+        {
+            "id": 19,
+            "name": "Flurry Heart",
+            "alias": "Baby Flurry Heart",
+            "url": "https://mlp.fandom.com/wiki/Flurry_Heart",
+            "sex": "Female",
+            "residence": "Crystal Empire",
+            "kind": ["Alicorn"],
+            "image": [
+                "https://vignette.wikia.nocookie.net/mlp/images/7/71/Flurry_Heart_ID_S6E1.png/revision/latest?cb=20160327000953",
+                "https://vignette.wikia.nocookie.net/mlp/images/a/a1/Flurry_Heart_Crystal_Pony_ID_S6E2.png/revision/latest?cb=20160327001545"
+            ]
+        },
+        {
+            "id": 81,
+            "name": "Cozy Glow",
+            "url": "https://mlp.fandom.com/wiki/Cozy_Glow",
+            "sex": "Female",
+            "residence": "Grogar's lair (S9E1-S9E24)\nTartarus (S8E26-S9E1)\nPonyville (S8E12-S8E26)",
+            "occupation": "Student at the School of Friendship (formerly)",
+            "kind": ["Alicorn", "Pegasus"],
+            "image": [
+                "https://vignette.wikia.nocookie.net/mlp/images/a/a5/Villains_statue_ID_S9E25.png/revision/latest?cb=20191024163908",
+                "https://vignette.wikia.nocookie.net/mlp/images/6/6e/Cozy_Glow_ID_S9E8.png/revision/latest?cb=20190523140839",
+                "https://vignette.wikia.nocookie.net/mlp/images/7/72/Alicorn_Cozy_Glow_ID_S9E24.png/revision/latest?cb=20191013020303",
+                "https://vignette.wikia.nocookie.net/mlp/images/a/a6/Chaos_Cozy_Glow_ID_S9E24.png/revision/latest?cb=20191013020335"
+            ]
+        },
+        {
+            "id": 505,
+            "name": "Lemon Hearts",
+            "url": "https://mlp.fandom.com/wiki/Lemon_Hearts",
+            "sex": "Female",
+            "residence": "Canterlot",
+            "occupation": "Canterlot event planner\nMember of a band with Pepperdance",
+            "kind": ["Alicorn", "Unicorn"],
+            "image": [
+                "https://vignette.wikia.nocookie.net/mlp/images/b/b9/Lemon_Hearts_ID_S4E19.png/revision/latest?cb=20150708012551",
+                "https://vignette.wikia.nocookie.net/mlp/images/f/ff/Lemon_Hearts_filly_ID_S5E12.png/revision/latest?cb=20150708164838",
+                "https://vignette.wikia.nocookie.net/mlp/images/1/13/Lemon_Hearts_Earth_pony_ID_S1E1.png/revision/latest?cb=20141212192447",
+                "https://vignette.wikia.nocookie.net/mlp/images/b/b1/Lemon_Hearts_Crystal_Pony_ID_S4E05.png/revision/latest?cb=20140315231836",
+                "https://vignette.wikia.nocookie.net/mlp/images/2/2f/Lemon_Hearts_alicorn_ID_S4E10.png/revision/latest?cb=20140120231434",
+                "https://vignette.wikia.nocookie.net/mlp/images/1/13/Hearts_id.png/revision/latest?cb=20110218032224",
+                "https://vignette.wikia.nocookie.net/mlp/images/7/76/Lemon_Hearts_in_mouse_costume_S02E04.png/revision/latest?cb=20150708182940"
+            ]
+        }
+    ]
+}
