@@ -1,17 +1,20 @@
-import React, { useEffect } from 'react'
-import PonyData from './my-little-pony-cat.json'
+import React from 'react'
+import useFetchData from '../../hooks/useFetchData'
 
-const MyLittlePonyCategory = ({ category }) => {
-    const [pony]
-    useEffect(() => {
-        const getPonies = async () => {
-            //fetc data here
-        }
-        getPonies()
-        console.log(PonyData.data)
-    }, [])
+const MyLittlePonyCategory = () => {
+    let [loading, response, error] = useFetchData(
+        'https://jsonplaceholder.typicode.com/posts/2',
+    )
 
-    return <div> {category}</div>
+    console.log(response)
+
+    return (
+        <div>
+            {loading && <div>Loading...</div>}
+            {response && <div>{response.title}</div>}
+            {error ? error : null}
+        </div>
+    )
 }
 
 export default MyLittlePonyCategory
