@@ -41,6 +41,7 @@ const useFetchData = (url) => {
             .get(url)
             .then((response) => {
                 dispatch({ type: 'RESOLVED', response: response.data })
+                console.log('Fetched data')
             })
             .catch((error) => {
                 dispatch({ type: 'ERROR', error })

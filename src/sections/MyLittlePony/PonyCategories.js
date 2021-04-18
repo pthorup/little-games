@@ -13,6 +13,7 @@ const PonyCategories = () => {
     return (
         <div>
             <p>Links of charaters here</p>
+
             {categories.current.map((category, index) => (
                 <div key={index}>
                     <Link to={`/my-little-pony/categories/${category}`}>

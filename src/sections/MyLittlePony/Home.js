@@ -5,6 +5,7 @@ import PonySongs from './PonySongs'
 import Favourites from './Favourites'
 import PonyList from './PonyList'
 import PonyDetail from './PonyDetail'
+import PonyListContext from './ponyListContext'
 
 const Home = () => {
     return (
@@ -18,10 +19,14 @@ const Home = () => {
                     <PonyCategories />
                 </Route>
                 <Route exact path="/my-little-pony/categories/:ponyCat">
-                    <PonyList />
+                    <PonyListContext.Consumer>
+                        {(data) => <PonyList ponies={data} />}
+                    </PonyListContext.Consumer>
                 </Route>
                 <Route path="/my-little-pony/categories/:ponyCat/:ponyId">
-                    <PonyDetail />
+                    <PonyListContext.Consumer>
+                        {(data) => <PonyDetail ponies={data} />}
+                    </PonyListContext.Consumer>
                 </Route>
                 <Route path="/my-little-pony/songs">
                     <PonySongs />

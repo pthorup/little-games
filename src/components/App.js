@@ -3,9 +3,11 @@ import Header from './Header'
 import Home from './Home'
 import MyLittlePony from '../sections/MyLittlePony/Home'
 import { Route, Switch } from 'react-router-dom'
+import PonyListContext from '../sections/MyLittlePony/ponyListContext'
+import TypingGame from '../sections/TypingGame/TypingGame'
+import { data } from '../sections/MyLittlePony/my-little-pony-cat.json'
 
 import './App.css'
-import TypingGame from '../sections/TypingGame/TypingGame'
 
 function App() {
     return (
@@ -20,17 +22,11 @@ function App() {
                         <TypingGame />
                     </Route>
                     <Route path="/my-little-pony">
-                        <MyLittlePony />
+                        <PonyListContext.Provider value={data}>
+                            <MyLittlePony />
+                        </PonyListContext.Provider>
                     </Route>
                 </Switch>
-                {/* <div className="app-menu">
-                    <a className="app-link" href>
-                        <div>Typing Game</div>
-                    </a>
-                    <a className="app-link" href>
-                        <div>My Little Pony</div>
-                    </a>
-                </div> */}
             </main>
         </div>
     )

@@ -1,38 +1,49 @@
 import React from 'react'
-import useFetchData from '../../hooks/useFetchData'
-import { data } from './my-little-pony-cat.json'
 import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-const PonyDetail = () => {
-    let [loading, response, error] = useFetchData(
-        'https://jsonplaceholder.typicode.com/posts/2',
+const PonyDetail = ({ ponies }) => {
+    // let [loading, response, error] = useFetchData(
+    //     'https://jsonplaceholder.typicode.com/posts/2',
+    // )
+
+    const { ponyId, ponyCat } = useParams()
+    const ponyIdInt = parseInt(ponyId)
+    const { image, name, residence, occupation, kind, url } = ponies.find(
+        (item) => item.id === ponyIdInt,
     )
 
-    const images = data[0].image
-    const name = data[0].name
-    const params = useParams()
-    console.log(params)
     return (
         <div>
-            {/* {loading && <div>Loading...</div>}
-            {response && <div>{response.title}</div>}
-            {error ? error : null} */}
+            <Link to={`/my-little-pony/categories/${ponyCat}`}>
+                Back to {ponyCat}
+            </Link>
             <div>
-                {images.map((image, index) => (
-                    <img src={image} key={index} alt={name} />
+                {image.map((image, index) => (
+                    <img src={image} key={index} alt={name} width="100" />
                 ))}
             </div>
             <div>
                 <p>Name: {name} </p>
-                <p>Residence: {data[0].residence} </p>
-                <p>Occupation: {data[0].occupation} </p>
-                <p>Kind: {data[0].kind[0]} </p>
+                <p>Residence: {residence} </p>
+                <p>Occupation: {occupation} </p>
+                <p>Kind: {kind[0]} </p>
                 <p>
-                    <a href={data[0].url} target="_blank" rel="noreferrer">
+                    <a href={url} target="_blank" rel="noreferrer">
                         Read more
                     </a>
                 </p>
             </div>
+
+            {/* {loading && <div>Loading...</div>}
+            {response && <div>{response.title}</div>}
+            {error ? error : null} */}
+
+            {/* <PonyListContext.Consumer>
+                {data => (
+                    
+                )}
+            </PonyListContext.Consumer> */}
         </div>
     )
 }
