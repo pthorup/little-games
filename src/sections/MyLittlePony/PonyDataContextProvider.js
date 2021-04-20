@@ -13,7 +13,7 @@ const PonyDataContextProvider = (props) => {
     const loading = false
     const error = null
 
-    console.log(data)
+    //console.log(data)
 
     return (
         // remember it is ponyData:response.data

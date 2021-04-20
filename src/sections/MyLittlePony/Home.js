@@ -8,10 +8,10 @@ import PonyDetail from './PonyDetail'
 
 const Home = () => {
     const [favourites, setFavourites] = useState([])
+    const [name, setName] = useState('')
 
-    console.log(favourites)
+    //console.log(favourites)
     const toggleFavourite = (ponyId) => {
-        console.log('clickeeed' + ponyId)
         // Handle logic of adding and removing id from favourites
         const found = favourites.includes(ponyId)
         if (found) {
@@ -19,11 +19,19 @@ const Home = () => {
         } else {
             setFavourites((prev) => [...prev, ponyId])
         }
-        console.log(favourites)
+        console.log('This is togglefavourite -home')
     }
 
     return (
         <div>
+            <label>
+                <input
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Untitled"
+                />
+            </label>
+            <h1>Hi {name}!</h1>
             <Link to="/my-little-pony/categories">Categories</Link>
             <Link to="/my-little-pony/songs">Songs</Link>
             <Link to="/my-little-pony/favourites">Favourites</Link>
@@ -45,7 +53,10 @@ const Home = () => {
                     <PonySongs />
                 </Route>
                 <Route path="/my-little-pony/favourites">
-                    <Favourites />
+                    <Favourites
+                        onFavouriteClick={toggleFavourite}
+                        favourites={favourites}
+                    />
                 </Route>
             </Switch>
         </div>

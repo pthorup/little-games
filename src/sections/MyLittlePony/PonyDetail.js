@@ -1,12 +1,11 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { Link } from 'react-router-dom'
 import { PonyDataContext } from './PonyDataContextProvider'
 
 const PonyDetail = (props) => {
     const { ponyData, loading, error } = useContext(PonyDataContext)
 
-    const { ponyId, ponyCat } = useParams()
+    const { ponyId } = useParams()
     const ponyIdInt = parseInt(ponyId)
 
     const { id, image, name, residence, occupation, kind, url } = ponyData.find(
@@ -17,6 +16,7 @@ const PonyDetail = (props) => {
     useEffect(() => {
         const found = props.favourites.includes(id)
         found ? setFavourited(true) : setFavourited(false)
+        console.log('useeffect - pony detail')
     }, [id, props.favourites])
 
     return (
@@ -24,9 +24,6 @@ const PonyDetail = (props) => {
             {loading && <div>Loading...</div>}
             {ponyData && (
                 <div>
-                    <Link to={`/my-little-pony/categories/${ponyCat}`}>
-                        Back to {ponyCat}
-                    </Link>
                     <div>
                         {image.map((image, index) => (
                             <img

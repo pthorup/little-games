@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './Header'
 import Home from './Home'
-import MyLittlePony from '../sections/MyLittlePony/Home'
+// import MyLittlePony from '../sections/MyLittlePony/Home'
 import { Route, Switch } from 'react-router-dom'
 import TypingGame from '../sections/TypingGame/TypingGame'
 import { PonyDataContextProvider } from '../sections/MyLittlePony/PonyDataContextProvider'
@@ -22,7 +22,7 @@ function App() {
                     </Route>
                     <Route path="/my-little-pony">
                         <PonyDataContextProvider>
-                            <MyLittlePony />
+                            {/* <MyLittlePony /> */}
                         </PonyDataContextProvider>
                     </Route>
                 </Switch>
