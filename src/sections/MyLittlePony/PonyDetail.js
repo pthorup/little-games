@@ -1,49 +1,69 @@
-import React from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import { PonyDataContext } from './PonyDataContextProvider'
 
-const PonyDetail = ({ ponies }) => {
-    // let [loading, response, error] = useFetchData(
-    //     'https://jsonplaceholder.typicode.com/posts/2',
-    // )
+const PonyDetail = (props) => {
+    const { ponyData, loading, error } = useContext(PonyDataContext)
 
     const { ponyId, ponyCat } = useParams()
     const ponyIdInt = parseInt(ponyId)
-    const { image, name, residence, occupation, kind, url } = ponies.find(
+
+    const { id, image, name, residence, occupation, kind, url } = ponyData.find(
         (item) => item.id === ponyIdInt,
     )
+    const [favourited, setFavourited] = useState([])
+
+    useEffect(() => {
+        const found = props.favourites.includes(id)
+        found ? setFavourited(true) : setFavourited(false)
+    }, [id, props.favourites])
 
     return (
         <div>
-            <Link to={`/my-little-pony/categories/${ponyCat}`}>
-                Back to {ponyCat}
-            </Link>
-            <div>
-                {image.map((image, index) => (
-                    <img src={image} key={index} alt={name} width="100" />
-                ))}
-            </div>
-            <div>
-                <p>Name: {name} </p>
-                <p>Residence: {residence} </p>
-                <p>Occupation: {occupation} </p>
-                <p>Kind: {kind[0]} </p>
-                <p>
-                    <a href={url} target="_blank" rel="noreferrer">
-                        Read more
-                    </a>
-                </p>
-            </div>
+            {loading && <div>Loading...</div>}
+            {ponyData && (
+                <div>
+                    <Link to={`/my-little-pony/categories/${ponyCat}`}>
+                        Back to {ponyCat}
+                    </Link>
+                    <div>
+                        {image.map((image, index) => (
+                            <img
+                                src={image}
+                                key={index}
+                                alt={name}
+                                width="100"
+                            />
+                        ))}
+                    </div>
+                    <div>
+                        <p>Name: {name ? name : 'Unknown'} </p>
+                        <p>Residence: {residence ? residence : 'Unknown'} </p>
+                        <p>
+                            Occupation: {occupation ? occupation : 'Unknown'}{' '}
+                        </p>
+                        <p>Kind: {kind.join(', ')} </p>
+                        <p>
+                            <a href={url} target="_blank" rel="noreferrer">
+                                Read more
+                            </a>
+                        </p>
+                        <button
+                            style={
+                                favourited
+                                    ? { backgroundColor: 'red' }
+                                    : { backgroundColor: 'grey' }
+                            }
+                            onClick={() => props.onFavouriteClick(id)}
+                        >
+                            Heart me
+                        </button>
+                    </div>
+                </div>
+            )}
 
-            {/* {loading && <div>Loading...</div>}
-            {response && <div>{response.title}</div>}
-            {error ? error : null} */}
-
-            {/* <PonyListContext.Consumer>
-                {data => (
-                    
-                )}
-            </PonyListContext.Consumer> */}
+            {error ? error : null}
         </div>
     )
 }

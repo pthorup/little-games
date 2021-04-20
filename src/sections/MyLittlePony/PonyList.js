@@ -1,27 +1,34 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import { PonyDataContext } from './PonyDataContextProvider'
 
-const PonyList = ({ ponies }) => {
-    // let [loading, response, error] = useFetchData(
-    //     'https://jsonplaceholder.typicode.com/posts/',
-    // )
+const PonyList = () => {
+    const { ponyData, loading, error } = useContext(PonyDataContext)
 
     const { ponyCat } = useParams()
-    const ponyList = ponies.map((item, index) => (
-        <div key={index}>
-            <Link to={`/my-little-pony/categories/${ponyCat}/${item.id}`}>
-                <img src={item.image} alt={item.name} width="100" />
-            </Link>
-        </div>
-    ))
+
+    const ponyFiltered = ponyData.filter(
+        (pony) =>
+            pony.kind !== undefined &&
+            pony.image !== undefined &&
+            pony.kind.includes(ponyCat),
+    )
+
+    const ponyList = ponyFiltered.map((pony) => {
+        return (
+            <div key={pony.id}>
+                <Link to={`/my-little-pony/categories/${ponyCat}/${pony.id}`}>
+                    <img src={pony.image[0]} alt={pony.name} width="100" />
+                </Link>
+            </div>
+        )
+    })
 
     return (
         <div>
-            {/* {loading && <div>Loading...</div>}
-            {response && <div>{response.title}</div>}
-            {error ? error : null} */}
-
-            {ponyList}
+            {loading && <div>Loading...</div>}
+            {ponyList && <div>{ponyList}</div>}
+            {error ? error : null}
         </div>
     )
 }

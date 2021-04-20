@@ -1,13 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PonyCategories from './PonyCategories'
 import { Link, Switch, Route } from 'react-router-dom'
 import PonySongs from './PonySongs'
 import Favourites from './Favourites'
 import PonyList from './PonyList'
 import PonyDetail from './PonyDetail'
-import PonyListContext from './ponyListContext'
 
 const Home = () => {
+    const [favourites, setFavourites] = useState([])
+
+    console.log(favourites)
+    const toggleFavourite = (ponyId) => {
+        console.log('clickeeed' + ponyId)
+        // Handle logic of adding and removing id from favourites
+        const found = favourites.includes(ponyId)
+        if (found) {
+            setFavourites(favourites.filter((e) => e !== ponyId))
+        } else {
+            setFavourites((prev) => [...prev, ponyId])
+        }
+        console.log(favourites)
+    }
+
     return (
         <div>
             <Link to="/my-little-pony/categories">Categories</Link>
@@ -19,14 +33,13 @@ const Home = () => {
                     <PonyCategories />
                 </Route>
                 <Route exact path="/my-little-pony/categories/:ponyCat">
-                    <PonyListContext.Consumer>
-                        {(data) => <PonyList ponies={data} />}
-                    </PonyListContext.Consumer>
+                    <PonyList />
                 </Route>
                 <Route path="/my-little-pony/categories/:ponyCat/:ponyId">
-                    <PonyListContext.Consumer>
-                        {(data) => <PonyDetail ponies={data} />}
-                    </PonyListContext.Consumer>
+                    <PonyDetail
+                        onFavouriteClick={toggleFavourite}
+                        favourites={favourites}
+                    />
                 </Route>
                 <Route path="/my-little-pony/songs">
                     <PonySongs />

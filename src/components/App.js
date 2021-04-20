@@ -3,9 +3,8 @@ import Header from './Header'
 import Home from './Home'
 import MyLittlePony from '../sections/MyLittlePony/Home'
 import { Route, Switch } from 'react-router-dom'
-import PonyListContext from '../sections/MyLittlePony/ponyListContext'
 import TypingGame from '../sections/TypingGame/TypingGame'
-import { data } from '../sections/MyLittlePony/my-little-pony-cat.json'
+import { PonyDataContextProvider } from '../sections/MyLittlePony/PonyDataContextProvider'
 
 import './App.css'
 
@@ -22,9 +21,9 @@ function App() {
                         <TypingGame />
                     </Route>
                     <Route path="/my-little-pony">
-                        <PonyListContext.Provider value={data}>
+                        <PonyDataContextProvider>
                             <MyLittlePony />
-                        </PonyListContext.Provider>
+                        </PonyDataContextProvider>
                     </Route>
                 </Switch>
             </main>
