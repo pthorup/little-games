@@ -41,12 +41,12 @@ const useFetchData = (url) => {
             .get(url)
             .then((response) => {
                 dispatch({ type: 'RESOLVED', response: response.data })
+                console.log('Fetched data')
             })
             .catch((error) => {
                 dispatch({ type: 'ERROR', error })
             })
     }, [url])
-    console.log('Fetched data')
     return [state.loading, state.response, state.error]
 }
 

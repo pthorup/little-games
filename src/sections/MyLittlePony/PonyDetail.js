@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { PonyDataContext } from './PonyDataContextProvider'
 
-const PonyDetail = (props) => {
+const PonyDetail = ({ favourites, onFavouriteClick }) => {
     const { ponyData, loading, error } = useContext(PonyDataContext)
 
     const { ponyId } = useParams()
@@ -14,11 +14,12 @@ const PonyDetail = (props) => {
     const [favourited, setFavourited] = useState([])
 
     useEffect(() => {
-        const found = props.favourites.includes(id)
+        const found = favourites.includes(id)
         found ? setFavourited(true) : setFavourited(false)
         console.log('useeffect - pony detail')
-    }, [id, props.favourites])
+    }, [id, favourites])
 
+    console.log('ponyDetail -home')
     return (
         <div>
             {loading && <div>Loading...</div>}
@@ -52,7 +53,7 @@ const PonyDetail = (props) => {
                                     ? { backgroundColor: 'red' }
                                     : { backgroundColor: 'grey' }
                             }
-                            onClick={() => props.onFavouriteClick(id)}
+                            onClick={() => onFavouriteClick(id)}
                         >
                             Heart me
                         </button>

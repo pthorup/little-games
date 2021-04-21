@@ -21,7 +21,7 @@ const Favourites = (props) => {
             </div>
         )
     })
-
+    console.log('favourite -home')
     return (
         <div>
             {loading && <div>Loading...</div>}

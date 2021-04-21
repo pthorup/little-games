@@ -3,12 +3,12 @@ import PonyCategories from './PonyCategories'
 import { Link, Switch, Route } from 'react-router-dom'
 import PonySongs from './PonySongs'
 import Favourites from './Favourites'
-import PonyList from './PonyList'
-import PonyDetail from './PonyDetail'
+// import PonyList from './PonyList'
+// import PonyDetail from './PonyDetail'
+import StylePony from './StylePony'
 
 const Home = () => {
     const [favourites, setFavourites] = useState([])
-    const [name, setName] = useState('')
 
     //console.log(favourites)
     const toggleFavourite = (ponyId) => {
@@ -19,38 +19,33 @@ const Home = () => {
         } else {
             setFavourites((prev) => [...prev, ponyId])
         }
-        console.log('This is togglefavourite -home')
     }
 
     return (
         <div>
-            <label>
-                <input
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Untitled"
-                />
-            </label>
-            <h1>Hi {name}!</h1>
             <Link to="/my-little-pony/categories">Categories</Link>
             <Link to="/my-little-pony/songs">Songs</Link>
             <Link to="/my-little-pony/favourites">Favourites</Link>
+            <Link to="/my-little-pony/style-pony">Style Pony</Link>
 
             <Switch>
                 <Route exact path="/my-little-pony/categories">
                     <PonyCategories />
                 </Route>
                 <Route exact path="/my-little-pony/categories/:ponyCat">
-                    <PonyList />
+                    {/* <PonyList /> */}
                 </Route>
                 <Route path="/my-little-pony/categories/:ponyCat/:ponyId">
-                    <PonyDetail
+                    {/* <PonyDetail
                         onFavouriteClick={toggleFavourite}
                         favourites={favourites}
-                    />
+                    /> */}
                 </Route>
                 <Route path="/my-little-pony/songs">
                     <PonySongs />
+                </Route>
+                <Route path="/my-little-pony/style-pony">
+                    <StylePony />
                 </Route>
                 <Route path="/my-little-pony/favourites">
                     <Favourites
