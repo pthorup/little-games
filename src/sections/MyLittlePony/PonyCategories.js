@@ -1,5 +1,39 @@
 import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+import randomColor from 'randomcolor'
+
+const Title = styled.h2`
+    font-family: 'Encode Sans', sans-serif;
+    font-size: 24px;
+    text-align: center;
+`
+
+const Categories = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 300px;
+`
+
+const StyledLink = styled(Link)`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: 'Encode Sans', sans-serif;
+    font-size: 24px;
+    height: 140px;
+    width: 140px;
+    text-shadow: 0px 0px 1px #c2c2c2;
+    text-decoration: none;
+    background-color: ${() => {
+        return randomColor()
+    }};
+    &:hover {
+        transform: scale(1.1, 1.1);
+    }
+`
 
 const PonyCategories = () => {
     const categories = useRef([
@@ -12,15 +46,19 @@ const PonyCategories = () => {
 
     return (
         <div>
-            <p>Links of charaters here</p>
+            <Title>Types of Ponies</Title>
 
-            {categories.current.map((category, index) => (
-                <div key={index}>
-                    <Link to={`/my-little-pony/categories/${category}`}>
-                        {category}
-                    </Link>
-                </div>
-            ))}
+            <Categories>
+                {categories.current.map((category, index) => (
+                    <div key={index}>
+                        <StyledLink
+                            to={`/my-little-pony/categories/${category}`}
+                        >
+                            {category}
+                        </StyledLink>
+                    </div>
+                ))}
+            </Categories>
         </div>
     )
 }

@@ -87,10 +87,6 @@ const TypingGame = () => {
 
     return (
         <div className="TypingGame">
-            <h1 className="TypingGame-title">
-                Little Typing <br />
-                Game
-            </h1>
             <div className="TypingGame-settingContainer">
                 <Settings
                     isUpperCase={isUpperCase}

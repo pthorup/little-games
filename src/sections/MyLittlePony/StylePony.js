@@ -53,7 +53,7 @@ const StylePony = () => {
     )
 
     const styles = {
-        border: `5px solid ${borderColor}`,
+        border: `20px solid ${borderColor}`,
         color: titleColor,
     }
 

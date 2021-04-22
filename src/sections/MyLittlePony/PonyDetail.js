@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { PonyDataContext } from './PonyDataContextProvider'
+import styled from 'styled-components'
 
 const PonyDetail = ({ favourites, onFavouriteClick }) => {
     const { ponyData, loading, error } = useContext(PonyDataContext)

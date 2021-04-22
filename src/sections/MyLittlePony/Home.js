@@ -3,14 +3,38 @@ import PonyCategories from './PonyCategories'
 import { Link, Switch, Route } from 'react-router-dom'
 import PonySongs from './PonySongs'
 import Favourites from './Favourites'
-// import PonyList from './PonyList'
-// import PonyDetail from './PonyDetail'
+import PonyList from './PonyList'
+import PonyDetail from './PonyDetail'
 import StylePony from './StylePony'
+import styled from 'styled-components'
+
+const StyledHome = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+const Image = styled.img`
+    margin: 40px;
+`
+
+const Nav = styled.nav`
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 1px solid lightgrey;
+    margin: 0 24px;
+    padding-bottom: 8px;
+`
+const StyledLink = styled(Link)`
+    font-family: 'Encode Sans', sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    :hover {
+        opacity: 0.7;
+    }
+`
 
 const Home = () => {
     const [favourites, setFavourites] = useState([])
 
-    //console.log(favourites)
     const toggleFavourite = (ponyId) => {
         // Handle logic of adding and removing id from favourites
         const found = favourites.includes(ponyId)
@@ -22,24 +46,32 @@ const Home = () => {
     }
 
     return (
-        <div>
-            <Link to="/my-little-pony/categories">Categories</Link>
-            <Link to="/my-little-pony/songs">Songs</Link>
-            <Link to="/my-little-pony/favourites">Favourites</Link>
-            <Link to="/my-little-pony/style-pony">Style Pony</Link>
+        <StyledHome>
+            <Nav>
+                <StyledLink to="/my-little-pony/categories">
+                    Categories
+                </StyledLink>
+                <StyledLink to="/my-little-pony/songs">Songs</StyledLink>
+                <StyledLink to="/my-little-pony/favourites">
+                    Favourites
+                </StyledLink>
+                <StyledLink to="/my-little-pony/style-pony">
+                    Style Pony
+                </StyledLink>
+            </Nav>
 
             <Switch>
                 <Route exact path="/my-little-pony/categories">
                     <PonyCategories />
                 </Route>
                 <Route exact path="/my-little-pony/categories/:ponyCat">
-                    {/* <PonyList /> */}
+                    <PonyList />
                 </Route>
                 <Route path="/my-little-pony/categories/:ponyCat/:ponyId">
-                    {/* <PonyDetail
+                    <PonyDetail
                         onFavouriteClick={toggleFavourite}
                         favourites={favourites}
-                    /> */}
+                    />
                 </Route>
                 <Route path="/my-little-pony/songs">
                     <PonySongs />
@@ -53,8 +85,12 @@ const Home = () => {
                         favourites={favourites}
                     />
                 </Route>
+                <Image
+                    src="/assets/img/my-little-pony/rainbow.png"
+                    alt="rainbow"
+                />
             </Switch>
-        </div>
+        </StyledHome>
     )
 }
 

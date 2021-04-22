@@ -1,6 +1,6 @@
-import React, { createContext, useCallback } from 'react'
+import React, { createContext } from 'react'
 import { data } from './my-little-pony-cat.json'
-import useFetchData from '../../hooks/useFetchData'
+// import useFetchData from '../../hooks/useFetchData'
 
 const PonyDataContext = createContext()
 
@@ -10,21 +10,14 @@ const PonyDataContextProvider = (props) => {
     //     // 'https://ponyweb.ml/v1/character/all?limit=10',
     // )
 
-    let [loading, response, error] = useFetchData(
-        'https://jsonplaceholder.typicode.com/posts/',
-        // 'https://ponyweb.ml/v1/character/all?limit=10',
-    )
-
-    // const loading = false
-    // const error = null
+    const loading = false
+    const error = null
 
     //console.log(data)
     console.log('provider')
     return (
         // remember it is ponyData:response.data
-        <PonyDataContext.Provider
-            value={{ ponyData: response, loading, error }}
-        >
+        <PonyDataContext.Provider value={{ ponyData: data, loading, error }}>
             {props.children}
         </PonyDataContext.Provider>
     )
