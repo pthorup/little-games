@@ -7,7 +7,7 @@ const StyledHeader = styled.header`
     align-items: center;
     justify-content: space-between;
     background-color: lightpink;
-    padding: 24px 48px;
+    padding: 24px 80px;
 `
 
 const Title = styled.h1`
