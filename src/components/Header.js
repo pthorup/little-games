@@ -6,6 +6,8 @@ const StyledHeader = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: lightpink;
+    padding: 24px 48px;
 `
 
 const Title = styled.h1`
@@ -21,7 +23,9 @@ const Header = () => {
     return (
         <StyledHeader>
             <Title>My Little Games</Title>
-            <StyledLink to="/">🏠</StyledLink>
+            <StyledLink to="/" title="Home">
+                🏠
+            </StyledLink>
         </StyledHeader>
     )
 }

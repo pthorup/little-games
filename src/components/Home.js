@@ -2,7 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-const StyledHome = styled.div`
+const Title = styled.h2`
+    text-align: center;
+`
+
+const LinkContainer = styled.div`
     display: flex;
     justify-content: space-evenly;
     margin-top: 50px;
@@ -32,14 +36,17 @@ const StyledLink = styled(Link)`
 
 function Home() {
     return (
-        <StyledHome>
-            <StyledLink to="/typing-game" className="typingGame">
-                Typing Game
-            </StyledLink>
-            <StyledLink to="/my-little-pony" className="myLittlePony">
-                My Little Pony
-            </StyledLink>
-        </StyledHome>
+        <>
+            <Title>Choose an activity</Title>
+            <LinkContainer>
+                <StyledLink to="/typing-game" className="typingGame">
+                    Typing Game
+                </StyledLink>
+                <StyledLink to="/my-little-pony" className="myLittlePony">
+                    My Little Pony
+                </StyledLink>
+            </LinkContainer>
+        </>
     )
 }
 

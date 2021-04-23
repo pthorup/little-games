@@ -9,22 +9,19 @@ import styled from 'styled-components'
 
 import './App.css'
 
-const StyledApp = styled.div`
-    margin: 0 auto;
-    max-width: 960px;
-    padding: 24px 48px;
-`
-
 const StyledMain = styled.main`
     min-height: 500px;
     margin-top: 24px;
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 24px 48px;
 `
 
-function App() {
+const App = () => {
     return (
-        <StyledApp>
+        <>
             <Header />
             <StyledMain>
                 <Switch>
@@ -41,7 +38,7 @@ function App() {
                     </Route>
                 </Switch>
             </StyledMain>
-        </StyledApp>
+        </>
     )
 }
 

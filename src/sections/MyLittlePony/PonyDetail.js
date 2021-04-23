@@ -103,7 +103,10 @@ const PonyDetail = ({ favourites, onFavouriteClick }) => {
                             </a>
                         </PonyInfoText>
 
-                        <Heart onClick={() => onFavouriteClick(id)}>
+                        <Heart
+                            onClick={() => onFavouriteClick(id)}
+                            title="favourited"
+                        >
                             {favourited ? '💜' : '🤍'}
                         </Heart>
                     </PonyInfo>
