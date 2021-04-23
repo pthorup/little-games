@@ -13,11 +13,9 @@ const StyledApp = styled.div`
     margin: 0 auto;
     max-width: 960px;
     padding: 24px 48px;
-    border: 1px solid black;
 `
 
 const StyledMain = styled.main`
-    border: 1px solid orange;
     min-height: 500px;
     margin-top: 24px;
     display: flex;

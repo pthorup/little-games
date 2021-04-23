@@ -1,13 +1,12 @@
 import React from 'react'
 
-const StylePonySVG = React.memo(({ hairColor, bodyColor, bgColor }) => {
+const StylePonySVG = React.memo(({ hairColor, bodyColor }) => {
     return (
         <div>
             <svg
                 viewBox="0 0 1052.4 744.09"
                 xmlns="http://www.w3.org/2000/svg"
                 // xmlns:xlink="http://www.w3.org/1999/xlink"
-                style={{ backgroundColor: bgColor }}
             >
                 <linearGradient id="a">
                     <stop offset="0" stopColor="#a595bb" />

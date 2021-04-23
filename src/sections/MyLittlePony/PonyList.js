@@ -7,7 +7,7 @@ const StyledPonList = styled.div`
     line-height: 0;
 
     -webkit-column-count: 5;
-    -webkit-column-gap: 0px;
+    -webkit-column-gap: 8px;
     -moz-column-count: 5;
     -moz-column-gap: 8px;
     column-count: 5;

@@ -1,14 +1,21 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const StyledButton = styled.button`
+    border: none;
+    width: 50px;
+    height: 50px;
+    background-color: ${(props) => props.color};
+    &:hover {
+        transform: scale(1.1, 1.1);
+    }
+`
 
 const ColorButton = React.memo(({ onClickHandler, colors }) => {
     return colors.map((color) => (
-        <button
-            key={color}
-            style={{ backgroundColor: color, width: '50px', height: '50px' }}
-            onClick={onClickHandler}
-        >
+        <StyledButton key={color} color={color} onClick={onClickHandler}>
             {' '}
-        </button>
+        </StyledButton>
     ))
 })
 

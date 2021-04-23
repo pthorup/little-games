@@ -1,9 +1,29 @@
+.textColor--yellow {
+    color: #ffe400;
+}
+
 .textColor--red {
     color: #c4041a;
 }
 
 .textColor--purple {
-    color: #4409db;
+    color: #6c19ff;
+}
+
+.textColor--darkPurple {
+    color: #4609b3;
+}
+
+.textColor--pink {
+    color: #ff0079;
+}
+
+.textColor--darkpink {
+    color: #b30056;
+}
+
+.textColor--blue {
+    color: #0bbad6;
 }
 
 ::placeholder {

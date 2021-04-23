@@ -28,7 +28,10 @@ const StyledLink = styled(Link)`
     text-shadow: 0px 0px 1px #c2c2c2;
     text-decoration: none;
     background-color: ${() => {
-        return randomColor()
+        return randomColor({
+            luminosity: 'bright',
+            hue: 'pink',
+        })
     }};
     &:hover {
         transform: scale(1.1, 1.1);

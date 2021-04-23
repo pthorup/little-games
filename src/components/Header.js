@@ -6,15 +6,15 @@ const StyledHeader = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid red;
 `
 
 const Title = styled.h1`
     font-family: 'Encode Sans', sans-serif;
-    color: #ebae34;
+    color: #ff0079;
 `
 const StyledLink = styled(Link)`
     font-size: 50px;
+    text-decoration: none;
 `
 
 const Header = () => {

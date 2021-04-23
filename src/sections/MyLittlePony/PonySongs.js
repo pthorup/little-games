@@ -1,7 +1,7 @@
 import React from 'react'
 
 const PonySongs = () => {
-    return <div>This is songs</div>
+    return <div>Coming Soon....</div>
 }
 
 export default PonySongs

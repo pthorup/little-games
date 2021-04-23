@@ -14,7 +14,6 @@ const PonyDataContextProvider = (props) => {
     const error = null
 
     //console.log(data)
-    console.log('provider')
     return (
         // remember it is ponyData:response.data
         <PonyDataContext.Provider value={{ ponyData: data, loading, error }}>

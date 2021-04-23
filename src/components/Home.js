@@ -3,10 +3,16 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const StyledHome = styled.div`
-    border: 1px solid purple;
     display: flex;
     justify-content: space-evenly;
     margin-top: 50px;
+    color: #fff;
+    .typingGame {
+        background: #0bbad6;
+    }
+    .myLittlePony {
+        background: #4609b3;
+    }
 `
 
 const StyledLink = styled(Link)`
@@ -19,19 +25,6 @@ const StyledLink = styled(Link)`
     text-decoration: none;
     height: 200px;
     width: 200px;
-    background: ${({ gameType }) => {
-        if (gameType === 'typingGame') return '#56ab2f'
-        else if (gameType === 'myLittlePony') return '#f953c6'
-        else return 'blue'
-    }};
-
-    background: ${({ gameType }) => {
-        if (gameType === 'typingGame')
-            return 'linear-gradient(to bottom, #a8e063, #56ab2f)'
-        else if (gameType === 'myLittlePony')
-            return 'linear-gradient(to top, #b91d73, #f953c6)'
-        else return 'blue'
-    }};
     &:hover {
         transform: scale(1.1, 1.1);
     }
@@ -40,10 +33,10 @@ const StyledLink = styled(Link)`
 function Home() {
     return (
         <StyledHome>
-            <StyledLink to="/typing-game" gameType={'typingGame'}>
+            <StyledLink to="/typing-game" className="typingGame">
                 Typing Game
             </StyledLink>
-            <StyledLink to="/my-little-pony" gameType={'myLittlePony'}>
+            <StyledLink to="/my-little-pony" className="myLittlePony">
                 My Little Pony
             </StyledLink>
         </StyledHome>

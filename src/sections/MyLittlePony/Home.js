@@ -13,17 +13,18 @@ const StyledHome = styled.div`
     flex-direction: column;
 `
 const Image = styled.img`
-    margin: 40px;
+    margin: 150px;
 `
 
 const Nav = styled.nav`
     display: flex;
     justify-content: space-evenly;
-    border-bottom: 1px solid lightgrey;
-    margin: 0 24px;
+    border-bottom: 1px solid #ffe500;
+    margin: 0 24px 32px 24px;
     padding-bottom: 8px;
 `
 const StyledLink = styled(Link)`
+    color: #0bbad6;
     font-family: 'Encode Sans', sans-serif;
     font-size: 18px;
     text-decoration: none;
