@@ -13,7 +13,12 @@ const StyledButton = styled.button`
 
 const ColorButton = React.memo(({ onClickHandler, colors }) => {
     return colors.map((color) => (
-        <StyledButton key={color} color={color} onClick={onClickHandler}>
+        <StyledButton
+            data-testid='color-btn'
+            key={color}
+            color={color}
+            onClick={onClickHandler}
+        >
             {' '}
         </StyledButton>
     ))

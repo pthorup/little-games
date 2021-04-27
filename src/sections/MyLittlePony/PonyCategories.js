@@ -49,12 +49,13 @@ const PonyCategories = () => {
 
     return (
         <div>
-            <Title>Types of Ponies</Title>
+            <Title data-testid='title'>Types of Ponies</Title>
 
             <Categories>
                 {categories.current.map((category, index) => (
                     <div key={index}>
                         <StyledLink
+                            data-testid='pony-cat'
                             to={`/my-little-pony/categories/${category}`}
                         >
                             {category}

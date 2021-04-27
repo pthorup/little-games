@@ -67,7 +67,7 @@ const StylePony = () => {
     const handleStyleChange = () => {
         const randomForTitle = Math.floor(Math.random() * colorGenerator.length)
         const randomForBorder = Math.floor(
-            Math.random() * colorGenerator.length,
+            Math.random() * colorGenerator.length
         )
         setTitleColor(colorGenerator[randomForTitle])
         setBorderColor(colorGenerator[randomForBorder])
@@ -78,26 +78,26 @@ const StylePony = () => {
         (e) => {
             setHairColor(e.target.attributes.color.value)
         },
-        [setHairColor],
+        [setHairColor]
     )
 
     const handleBodyColorChange = useCallback(
         (e) => {
             setBodyColor(e.target.attributes.color.value)
         },
-        [setBodyColor],
+        [setBodyColor]
     )
 
     const handleBgColorChange = useCallback(
         (e) => {
             setBgColor(e.target.attributes.color.value)
         },
-        [setBgColor],
+        [setBgColor]
     )
 
     return (
         <div>
-            <Title>Style Your Pony</Title>
+            <Title data-testid='title'>Style Your Pony</Title>
             <StyledPony>
                 <Settings>
                     <h3>Settings</h3>
